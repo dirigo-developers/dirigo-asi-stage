@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dirigo_asi_stage"
+version = "0.1.0"
+description = "Plugin to use ASI MS2000 motorized stages with Dirigo."
+authors = [
+    {name = "Honghao Cao", email = "honghao@mit.edu"}
+]
+license = {text = "MIT"}
+dependencies = [
+    "dirigo",
+    "pyvisa>=1.13.0"  # Required for VISA communication with ASI stages
+]
+
+[project.entry-points."dirigo_stages"]
+ms2000 = "dirigo_asi_stage:MS2000Stage"
+
+
